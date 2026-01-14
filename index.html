@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAPPY ANNIVERSARY BAAAB! 💖</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: linear-gradient(to bottom right, #ffdde1, #c1f0f6); color: #333; overflow-x: hidden; }
+
+    /* --- Intro --- */
+    #intro {
+      position: fixed; inset: 0;
+      background: linear-gradient(to bottom right, #ffb6c1, #87cefa);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; transition: opacity 1s ease; z-index: 1000; border-radius: 15px;
+    }
+    #intro button {
+      background: #ff69b4; border: none; color: white; font-size: 1.2em; margin-top: 20px;
+      padding: 10px 25px; border-radius: 25px; cursor: pointer; transition: 0.3s;
+    }
+    #intro button:hover { background: #ff85c1; }
+
+    #question { display: none; flex-direction: column; align-items: center; justify-content: center; }
+    #question h2 { margin-bottom: 20px; color: #ff69b4; }
+    .yes-btn {
+      background: #ff69b4; color: white; border: none; padding: 10px 20px;
+      border-radius: 20px; margin: 5px; cursor: pointer; transition: 0.3s;
+    }
+    .yes-btn:hover { transform: scale(1.1); background: #ff85c1; }
+
+    /* --- Floating Hearts --- */
+    .heart {
+      position: absolute; width: 20px; height: 20px; background: #ff69b4;
+      transform: rotate(45deg); animation: float 6s infinite, twinkle 2s infinite alternate;
+      opacity: 0.8; border-radius: 3px;
+    }
+    .heart::before, .heart::after {
+      content: ''; position: absolute; width: 20px; height: 20px; background: #ff69b4; border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes float { 0% { transform: translateY(0) rotate(45deg); opacity: 0.8; } 100% { transform: translateY(-800px) rotate(45deg); opacity: 0; } }
+    @keyframes twinkle { 0% { opacity: 0.5; } 100% { opacity: 1; } }
+
+    /* --- Confetti --- */
+    .confetti {
+      position: fixed; width: 10px; height: 10px;
+      background: red; z-index: 9999; opacity: 0.9;
+      animation: confetti-fall linear infinite;
+    }
+    @keyframes confetti-fall {
+      0% { transform: translateY(0) rotate(0deg); opacity:1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity:0; }
+    }
+
+    /* --- Main --- */
+    main { opacity: 0; transition: opacity 2s ease; overflow-x: hidden; }
+    section { padding: 100px 20px; text-align: center; }
+
+    #welcome h1 { font-size: 3em; color: #ff69b4; animation: fadeInDown 2s ease forwards; }
+    #welcome .poem-line { font-style: italic; color: #ff69b4; font-size: 1.3em; opacity: 0; animation: fadeInPoem 3s ease forwards; animation-delay: 1s; }
+    @keyframes fadeInPoem { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+    #letter {
+      background: #ffe4f0; border-radius: 15px; margin: 40px auto;
+      padding: 30px; max-width: 800px; text-align: left; line-height: 1.8; color: #333;
+    }
+    #letter p {
+      margin-bottom: 20px; opacity: 0; transition: opacity 1s ease, transform 1s ease;
+      transform: translateY(20px);
+    }
+    #letter p.show { opacity: 1; transform: translateY(0); }
+
+    @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-50px); } 100% { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <!-- Intro -->
+  <div id="intro">
+    <div id="clickHere">
+      <h1>Click here 💌</h1>
+      <button onclick="startQuestions()">Open</button>
+    </div>
+    <div id="question">
+      <h2 id="qText">Do you love me? 🥺</h2>
+      <div>
+        <button class="yes-btn" onclick="nextQuestion()">Yes 💖</button>
+        <button class="yes-btn" onclick="nextQuestion()">Yes 💕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <main id="mainPage">
+    <section id="welcome">
+      <h1>Happy Anniversary, BAAAB! ❤️</h1>
+      <p class="poem-line">Every heartbeat whispers your name…</p>
+    </section>
+
+    <section id="letter">
+      <!-- Full letter included -->
+      <p>BAAABBB 🥹 BAAAABB 🥹🥹 HAPPYY ANNIVERSARY BAABBB!!!! 💐💐💐 HAPPY SECONDDD ANNIVERSARY CHARDERLY NAKOOOO!!!! 💐💐🐢🥳🥳 HAPPY 24 MONTHSS BAAB!!! Happy happy happy seconddd anniversary!!!</p>
+      <p>Bab di ko mapul-an na mo ingon nimo kung unsa ko ka thankful na naa ka sakong kinabuhi. I love you so so much charderly aleguiojo. More than you think and more than I think. Daghan kaykog ganahan i-ingon baabb, pero akong utok I love you ra ang ganahan ingnon.</p>
+      <p>Charderly, bab, I will forever thank you for always staying by my side even when things are not okay and getting too messy. I love you and I will always thank you, my bab 🥹. I don't know you that much ever since then, baby nako. Wala ko nag expect na ing-ani ka maka love ug tao. I am happy and so grateful that ako ang tao nga imong gihigugma. Salamat bab. You've been good and kind to me.</p>
+      <p>I always say na okay ra nako if mo hawa ka, okay ra nako kung di naka maganahan nako, okay ra nako na di nako nimo love, ing-ana. But no bab, it will never be okay para sa akoa. Ganahan ko nimo, ganahan ko love ko nimo. Ganahan kaayo kaayo ko. Please bab, stay with me. Stay with me.</p>
+      <p>I will choose to have you, and carry all my problems with me, than to not have any problems yet wala ka nako. Ganahan jud kaayo ko nimo bab. You've taught me how to love gently, and carefully. Imong gipakita nako kung unsa ka ka kusgan bab. I am really really really proud of you. Kung kapoyon ka pahuway nako bab ha, bisan ako ang rason sa imong kakapoy. Thank you jud kaayo for still staying with me, despite of everything that happened to us.</p>
+      <p>I love you charderly aleguiojo. BIG TIME. I love how you love me bab. I love how you take care of me. I love how you baby me. I love how you think about me. I love how you tell everything to me. Thank you kaayo bab. Thank you jud. You made me feel the love that I longed for ever since I was kid. You accepted me for who I am, and you never failed to make me feel very loved by you.</p>
+      <p>Nakat-onan nako nimo bab kung unsaon pag love nga naay patience ug unsaon pag stay even if gubot na kaayo nya draining na kaayo. Bab salamat sa pag pili sa akoa permi 🥹 Bisan naa kay choice na mangita na ug lain, di nimo buhaton because you always choose to forgive and love me again 🥹 How lucky I am to have a charderly aleguiojo in my life. How lucky I am to have you in my life.</p>
+      <p>Charderly Aleguiojo, I really really really really really really really really really really love you with all my heart. If you ask me what does a home feels like, it's like when I am wrapped in your arms. Maong kung mag himo kog balay bab, dapat pareha siya ka peaceful sa imong hug. I really want to be with you bab. I would do anything to be with you. I want to see you in my puhon. I know you'll be there. I just know bab.</p>
+      <p>I just hope we continue to love each other despite sa mga problema na mo abot. I will swear and pinky promise, that I would not distance myself anymore from you if things will get messy again. I will stay by your side, I will stay with you, and I will choose to face all the problems that I may face, with you. Itaga mo bato.</p>
+      <p>If we're together, it will be easier. Let's do a great job sa atong pag skwela bab ha. Let's help each other sa tanan butang. I'll always be here na bab. Mikyla will stay na. Always. I can't wait to see you achieving your goals and plans in life bab. I'll be happy to watch that. I will always support you. I will also protect you from anyone. Especially from my mother hahaha! I swear charderly aleguiojo, I lvoee lovee youuuu!!</p>
+      <p>HAPPYYYYYYY ANNIVERSARY BAABABABBB NAAKOOOO!!! 💐💐🐢🙏 HAPPYY ANNIVERSARY KAAYOOOO NATOOO!!! I LOVEEE YOUUUUUU SALAMAT SA TANAN BAAAABB!!! Salamt sa 24 months na pag love sa akoo!! Padayon ta sa puhon. CHEERS TI HAVE MORE YEARS, MONTHS, AND DAYS WITH YOUUU!! 🥂 HAPPYY HAPPYY ANNIVERSARY BAABB!!</p>
+    </section>
+  </main>
+
+  <!-- Love Song -->
+  <audio id="loveSong" src="/mnt/data/480f7542-f1d7-4f65-8a7a-f46824270f39.mp3" loop preload="auto"></audio>
+
+  <script>
+    const intro = document.getElementById('intro');
+    const question = document.getElementById('question');
+    const clickHere = document.getElementById('clickHere');
+    const mainPage = document.getElementById('mainPage');
+    const qText = document.getElementById('qText');
+    const paragraphs = document.querySelectorAll('#letter p');
+
+    const questions = [
+      "Do you love me? 🥺",
+      "Weh? 😏",
+      "Really really sure? 😆",
+      "Pinky promise? 💕",
+      "Cross your heart? Makilatan man? Ay HAHAHAHA",
+      "Forever and ever bab?",
+      "Okay fine, last one na hehe. Feel nako love jud ko nimo 😚"
+    ];
+
+    let currentQ = 0;
+    let songStarted = false;
+    const song = document.getElementById('loveSong');
+
+    function startQuestions() {
+      clickHere.style.display = 'none';
+      question.style.display = 'flex';
+
+      if (!songStarted) {
+        songStarted = true;
+        fadeInAudio();
+      }
+    }
+
+    function nextQuestion() {
+      currentQ++;
+      if(currentQ < questions.length){
+        qText.textContent = questions[currentQ];
+      } else {
+        intro.style.opacity = '0';
+        setTimeout(() => {
+          intro.style.display = 'none';
+          mainPage.style.opacity = '1';
+          document.body.style.overflow = 'auto';
+          createHearts();
+          createConfetti();
+          showParagraphs();
+          if (!songStarted) {
+            songStarted = true;
+            fadeInAudio();
+          }
+        }, 800);
+      }
+    }
+
+    function fadeInAudio() {
+      song.volume = 0;
+      song.play().catch(() => {
+        document.body.addEventListener('click', () => song.play(), { once: true });
+      });
+      let vol = 0;
+      const fade = setInterval(() => {
+        if(vol < 1){
+          vol += 0.02;
+          song.volume = Math.min(vol, 1);
+        } else {
+          clearInterval(fade);
+        }
+      }, 100);
+    }
+
+    function createHearts() {
+      for(let i=0;i<30;i++){
+        let heart = document.createElement('div');
+        heart.className='heart';
+        heart.style.left=Math.random()*window.innerWidth+'px';
+        heart.style.animationDuration=3+Math.random()*5+'s';
+        heart.style.width=10+Math.random()*20+'px';
+        heart.style.height=heart.style.width;
+        document.body.appendChild(heart);
+      }
+    }
+
+    function showParagraphs() {
+      paragraphs.forEach((p,i)=>{
+        setTimeout(()=>{p.classList.add('show');}, i*500);
+      });
+    }
+
+    function createConfetti() {
+      for(let i=0;i<100;i++){
+        let c=document.createElement('div');
+        c.className='confetti';
+        c.style.left=Math.random()*window.innerWidth+'px';
+        c.style.background=['#ff69b4','#ffb6c1','#87cefa','#c1f0f6'][Math.floor(Math.random()*4)];
+        c.style.animationDuration=2+Math.random()*3+'s';
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),5000);
+      }
+    }
+  </script>
+</body>
+</html>
